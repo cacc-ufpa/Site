@@ -28,44 +28,28 @@ function Home() {
     <>
       {/* Capa */}
       <section className="relative overflow-hidden border-b-2 border-ink">
-        <div className="mx-auto grid max-w-7xl md:grid-cols-12">
+        <div className="mx-auto grid max-w-7xl md:grid-cols-1">
           <div className="px-4 pb-12 pt-10 md:col-span-8 md:px-8 md:pt-16">
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase">
               <span className="tag bg-ink text-neon">Edição permanente</span>
               <span>Centro Acadêmico de Ciência da Computação</span>
             </div>
-            <h1 className="display mt-8 text-[18vw] md:text-[10.5rem]">
-              Código
-              <br />
-              <span className="ml-[0.6em] bg-neon px-2">aberto,</span>
-              <br />
-              curso <span className="text-violet">vivo.</span>
-            </h1>
-            <p className="mt-8 max-w-lg text-lg">
+            <h1 className="display mt-8 text-[12vw] leading-tight md:text-[7rem]">
+    		Centro{' '}
+    		<span className="inline-block whitespace-nowrap bg-neon px-0">
+	        acadêmico
+    		</span>{' '}
+    		de Ciência da{' '}
+    		<span className="inline-block whitespace-nowrap bg-neon px-0 mt-2 md:mt-0">
+      		computação
+    		</span>
+  		</h1>            
+		<p className="">
               O CACC representa os estudantes de Computação, organiza eventos, divulga o que a gente constrói e reúne o que
               todo mundo precisa saber para sobreviver ao curso.
             </p>
           </div>
-          <aside className="flex flex-col border-t-2 border-ink bg-deep text-paper md:col-span-4 md:border-l-2 md:border-t-0">
-            <p className="display p-6 text-[7rem] leading-none text-neon md:text-[9rem]">CC</p>
-            <nav aria-label="Nesta edição" className="mt-auto">
-              {([
-                ["/eventos", "Agenda", "01"],
-                ["/projetos", "Projetos", "03"],
-                ["/acervo", "Acervo", "05"],
-                ["/manuais", "Manuais", "06"],
-              ] as const).map(([to, label, n]) => (
-                <Link key={to} to={to} className="flex items-center justify-between border-t border-paper/20 px-6 py-4 hover:bg-neon hover:text-ink">
-                  <span className="display text-3xl">
-                    <span className="mr-3 font-mono text-xs opacity-60">{n}</span>
-                    {label}
-                  </span>
-                  <ArrowUpRight />
-                </Link>
-              ))}
-            </nav>
-          </aside>
-        </div>
+	</div>
       </section>
 
       {/* Aviso */}

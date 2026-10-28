@@ -15,4 +15,4 @@ updated: "2026-09-15"
 
 ## Recuperar senha
 
-Use a opção **Esqueci minha senha** na tela de login.
+Use a opção **Esqueci minha senha** na tela de login...
