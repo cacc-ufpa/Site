@@ -5,7 +5,7 @@ time: "08h às 18h"
 location: "Faci Wyden"
 category: "Evento"
 organizer: "CACC"
-image: "/public/images/eventos/aws.jpg"
+image: "/images/eventos/aws.jpg"
 registration_url: ""
 status: "upcoming"
 ---
