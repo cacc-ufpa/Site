@@ -1,7 +1,7 @@
 ---
-title: "Assembleia geral dos estudantes"
+title: "Site ainda em construção!"
 date: "2026-10-30"
-important: true
+important: false
 ---
 
-Aviso de demonstração. Pauta e local serão divulgados pela gestão.
+Você pode ajudar no desenvolvimento do site! 

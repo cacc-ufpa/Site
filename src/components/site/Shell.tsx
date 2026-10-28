@@ -89,7 +89,7 @@ export function Footer() {
         </nav>
       </div>
       <div className="border-t border-paper/10 px-4 py-4 text-center font-mono text-xs text-paper/50">
-        gestão {site.gestao_periodo} · conteúdo em markdown · sem cookies
+        gestão {site.gestao_periodo} · Linus Torvalds
       </div>
     </footer>
   );
