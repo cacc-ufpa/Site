@@ -1,6 +1,6 @@
 ---
 title: "AmazonSec"
-date: "2026-10-29"
+date: "2027-12-12"
 time: "x"
 location: "a"
 category: "Evento"
