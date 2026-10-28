@@ -1,0 +1,148 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Terminus";
+  src: url("/fonts/Terminus.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Terminus";
+  src: url("/fonts/Terminus-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-display: "Terminus", "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: var(--radius);
+  --radius-xl: 4px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-deep: var(--deep);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-violet: var(--violet);
+  --color-coral: var(--coral);
+}
+
+:root {
+  --radius: 3px;
+  --neon: oklch(0.88 0.21 152);      /* #39FF88 */
+  --deep: oklch(0.36 0.07 158);      /* #164A32 */
+  --ink: oklch(0.19 0.012 145);      /* #101510 */
+  --paper: oklch(0.95 0.012 110);    /* #F0F0E6 */
+  --violet: oklch(0.55 0.21 285);    /* #7047EB */
+  --coral: oklch(0.71 0.15 40);      /* #F07852 */
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(0.98 0.008 110);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--neon);
+  --primary-foreground: var(--ink);
+  --secondary: var(--deep);
+  --secondary-foreground: var(--paper);
+  --muted: oklch(0.9 0.014 110);
+  --muted-foreground: oklch(0.42 0.02 145);
+  --accent: var(--violet);
+  --accent-foreground: var(--paper);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--paper);
+  --border: oklch(0.19 0.012 145 / 18%);
+  --input: oklch(0.19 0.012 145 / 25%);
+  --ring: var(--violet);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+  ::selection { background: var(--neon); color: var(--ink); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+@utility tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.45rem;
+  display: inline-block;
+}
+@utility grid-paper {
+  background-image:
+    linear-gradient(color-mix(in oklab, currentColor 9%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, currentColor 9%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+@utility link-under {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  &:hover { text-decoration-color: var(--violet); }
+}
+
+@utility prose-cacc {
+  max-width: 68ch;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  & h2 { font-family: var(--font-display); font-weight: 700; font-size: 2rem; line-height: 1; margin: 2.5rem 0 1rem; scroll-margin-top: 6rem; }
+  & h3 { font-weight: 700; font-size: 1.25rem; margin: 1.75rem 0 0.5rem; }
+  & p { margin: 0 0 1rem; }
+  & ul { list-style: square; padding-left: 1.4rem; margin: 0 0 1rem; }
+  & ol { list-style: decimal; padding-left: 1.6rem; margin: 0 0 1rem; }
+  & ol li::marker { font-family: var(--font-display); font-weight: 700; color: var(--deep); }
+  & li { margin: 0.3rem 0; }
+  & a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--violet); }
+  & code { font-family: var(--font-mono); font-size: 0.9em; background: var(--muted); padding: 0.1em 0.35em; }
+  & pre { background: var(--ink); color: var(--neon); padding: 1rem; overflow-x: auto; margin: 0 0 1rem; }
+  & pre code { background: transparent; }
+  & blockquote { border-left: 6px solid var(--coral); background: color-mix(in oklab, var(--coral) 14%, transparent); padding: 0.75rem 1rem; margin: 0 0 1.5rem; font-size: 0.95rem; }
+  & blockquote p { margin: 0; }
+  & img { max-width: 100%; margin: 1rem 0; }
+  & strong { font-weight: 700; }
+}
