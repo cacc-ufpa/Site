@@ -1,0 +1,9 @@
+---
+title: "TÍTULO DO AVISO — SUBSTITUIR"
+date: "AAAA-MM-DD" # Quanto mais recente, maior prioridade; o primeiro é exibido na home.
+important: false # false: faixa verde; true: faixa roxa.
+---
+
+Aviso curto e direto. Links Markdown funcionam: [mais informações](https://exemplo.org).
+
+> MODELO. Avisos não são notícias completas: use /content/noticias para matérias longas.

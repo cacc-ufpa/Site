@@ -1,0 +1,26 @@
+---
+title: "TÍTULO DA NOTÍCIA — SUBSTITUIR"
+description: "Resumo objetivo que aparece no cartão da home e em Notícias."
+date: "AAAA-MM-DD" # Data de publicação; notícias são ordenadas por data decrescente.
+updated: "" # Opcional: data de atualização.
+category: "Acadêmico" # Ex.: Acadêmico, CACC, Comunidade, Pesquisa, Evento
+author: "CACC"
+image: "" # Ex.: /images/noticias/foto.jpg
+source_url: "" # Link original https://... quando a notícia reproduz fonte externa.
+published: false # Necessário alterar para true ao publicar este modelo.
+draft: true # Alterar para false ou remover ao publicar.
+---
+
+> MODELO. Remova este aviso e confirme todos os fatos antes de publicar.
+
+## O que aconteceu?
+
+Conte a notícia em linguagem objetiva, com data e contexto.
+
+## Quem é afetado?
+
+Explique a relevância para os estudantes.
+
+## Onde encontrar informações oficiais?
+
+Inclua fontes primárias e links pertinentes.

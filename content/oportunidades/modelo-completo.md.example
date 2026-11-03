@@ -1,0 +1,32 @@
+---
+title: "TÍTULO DA OPORTUNIDADE — SUBSTITUIR"
+description: "Resumo curto do que está sendo oferecido."
+category: "Estágio" # Ex.: Bolsa, IC, Monitoria, Hackathon, Emprego, Seleção, Edital
+organization: "Instituição responsável"
+date: "AAAA-MM-DD" # Data da publicação deste item.
+deadline: "" # YYYY-MM-DD; vazio se não houver prazo confirmado.
+status: "" # aberta | encerrada | cancelada | fechada | sem_prazo; vazio = confirmar.
+source_url: "" # https://... fonte oficial; não invente editais.
+tags: ["Computação"] # Lista de palavras-chave.
+published: false
+draft: true
+---
+
+> MODELO. Confirme o edital, requisitos, status e prazo antes de publicar.
+
+## Sobre a oportunidade
+
+Explique a vaga, bolsa, seleção ou competição e quem organiza.
+
+## Requisitos
+
+- Elegibilidade e conhecimentos necessários
+- Documentos solicitados
+
+## Inscrições
+
+Informe datas e procedimentos. Priorize o edital original em `source_url`.
+
+## Observações
+
+Indique se o CACC apenas divulga a oportunidade.

@@ -1,0 +1,31 @@
+---
+title: "NOME DO PROJETO — SUBSTITUIR"
+author: "Nome(s) do(s) estudante(s)/equipe" # Autoria exibida no site.
+description: "Resumo curto para o cartão do projeto."
+image: "" # Ex.: /images/projetos/nome-do-projeto.png
+technologies:
+  - "Python"
+  - "React"
+repository_url: "" # Repositório público (https://...), se houver.
+demo_url: "" # Demonstração pública (https://...), se houver.
+featured: false # true prioriza o projeto na ordenação da coleção.
+month_project: false # true o torna candidato a Projeto do Mês; use em APENAS UM.
+---
+
+> MODELO: publique apenas projetos reais autorizados pelos autores.
+
+## Qual problema o projeto resolve?
+
+Explique o contexto e a motivação.
+
+## Como funciona?
+
+Descreva os principais recursos e inclua capturas de tela, se permitidas.
+
+## Tecnologias e contribuições
+
+Relacione ferramentas e formas de participação.
+
+## Links
+
+Use `repository_url` e `demo_url` acima. Não publique credenciais.

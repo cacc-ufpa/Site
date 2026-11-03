@@ -1,0 +1,33 @@
+---
+# Obrigatório: nome do evento (visível no cartão e na página individual).
+title: "NOME DO EVENTO — SUBSTITUIR"
+# Obrigatório: data em YYYY-MM-DD. Usada para ordenar e decidir se já passou.
+date: "AAAA-MM-DD"
+# Opcionais: campos exibidos nos cartões e/ou na página do evento.
+time: "14:00"
+location: "Local a confirmar"
+category: "Oficina" # Ex.: Palestra, Workshop, Minicurso, Defesa, Evento acadêmico
+organizer: "CACC"
+image: "" # Ex.: /images/eventos/nome-do-evento.jpg
+registration_url: "" # URL completa https://...; vazio quando não há inscrição.
+# past força 'passado'; upcoming força 'próximo'.
+# Se você remover status, o site decide automaticamente pela data.
+status: "upcoming" # upcoming | past
+---
+
+> MODELO: substitua as informações antes de publicar. Este `.example` não aparece no site.
+
+Breve apresentação do evento. O primeiro parágrafo pode aparecer como resumo no destaque da página inicial.
+
+## Sobre o evento
+
+Descreva o tema, o objetivo e o público-alvo.
+
+## Programação
+
+- 14h — Abertura
+- 15h — Atividade principal
+
+## Inscrições e participação
+
+Coloque orientações verificadas. Caso haja formulário oficial, preencha `registration_url`.

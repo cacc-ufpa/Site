@@ -1,0 +1,30 @@
+---
+title: "Nome oficial da disciplina"
+code: "CODIGO-OFICIAL"
+ppc:
+  - "2024"
+semester: "1"
+workload: "60h"
+prerequisites: []
+description: "Resumo conferido com a matriz curricular oficial."
+source_url: "https://www.computacao.ufpa.br/"
+published: false
+---
+
+> Modelo de preenchimento. Remova esta mensagem antes de publicar.
+
+## Ementa
+
+Cole ou resuma fielmente a ementa oficial do PPC correspondente.
+
+## Bibliografia básica
+
+- Obra conforme documento oficial.
+
+## Materiais complementares
+
+Recursos gratuitos e links úteis, após revisão.
+
+## Observações
+
+Dicas não oficiais devem ser identificadas como orientações de estudantes.
