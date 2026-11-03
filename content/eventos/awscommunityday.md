@@ -7,7 +7,7 @@ category: "Evento"
 organizer: "CACC"
 image: "/images/eventos/aws.jpg"
 registration_url: ""
-status: "upcoming"
+status: "past"
 ---
 
 > Renove seus conhecimentos em AWS no AWS Community Day Brasil! Aprenda sobre as últimas tendências, conecte-se com a comunidade e crie contatos valiosos.
