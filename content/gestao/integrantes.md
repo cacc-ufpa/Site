@@ -53,7 +53,7 @@ members:
     links: []
 
   - name: "Giuliana"
-    role: "Více-Líder da diretoria de comunicação"
+    role: "Vice-Diretora de comunicação"
     bio: "Auxilia na divulgação de informações, campanhas e eventos, contribuindo para a comunicação institucional do CACC."
     photo: "/images/gestao/giuliana.jpg"
     links: []
