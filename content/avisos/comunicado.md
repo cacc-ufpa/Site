@@ -1,7 +1,7 @@
 ---
-title: "Site ainda em construção!"
+title: "ENADE 2026"
 date: "2026-10-30"
 important: false
 ---
 
-Você pode ajudar no desenvolvimento do site! 
+A FACOMP preparou uma playlist com vídeos curtos para esclarecer suas dúvidas sobre o ENADE: [Clique aqui](https://www.youtube.com/playlist?list=PLDqcybZZBi6M)
