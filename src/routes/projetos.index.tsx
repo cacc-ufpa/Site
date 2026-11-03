@@ -23,7 +23,7 @@ function Projetos() {
         Software feito por estudantes: bots, compiladores, ferramentas e experimentos.
       </PageHead>
       {doMes && (
-        <section className="border-b-2 border-ink bg-violet text-paper">
+        <section className="border-b border-border bg-deep text-paper">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 md:grid-cols-[auto_1fr_auto] md:px-8">
             <Cover src={doMes.image} alt={doMes.title} tone="neon" className="aspect-square w-40" />
             <div>
@@ -35,7 +35,7 @@ function Projetos() {
               <p className="mt-2 font-mono text-xs uppercase opacity-80">{doMes.author}</p>
             </div>
             {site.vote_url && (
-              <a href={site.vote_url} target="_blank" rel="noreferrer" className="display self-start bg-paper px-5 py-3 text-2xl text-ink hover:bg-neon md:self-center">
+              <a href={site.vote_url} target="_blank" rel="noreferrer" className="display self-start bg-neon px-5 py-3 text-2xl text-ink hover:bg-neon/90 md:self-center">
                 Votar no próximo →
               </a>
             )}
@@ -45,12 +45,12 @@ function Projetos() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         <ol>
           {outros.map((p, i) => (
-            <li key={p.slug} className="border-t-2 border-ink">
+            <li key={p.slug} className="border-t border-border">
               <Link to="/projetos/$slug" params={{ slug: p.slug }} className="group grid items-center gap-6 py-6 md:grid-cols-[3rem_6rem_1fr_1fr]">
                 <span className="display text-3xl opacity-40">{String(i + 1).padStart(2, "0")}</span>
                 <Cover src={p.image} alt={p.title} tone={i % 2 ? "coral" : "deep"} className="aspect-square w-24" />
                 <div>
-                  <h3 className="display text-4xl group-hover:text-violet">{p.title}</h3>
+                  <h3 className="font-title text-3xl font-bold group-hover:text-violet">{p.title}</h3>
                   <p className="font-mono text-xs uppercase opacity-70">{p.author}</p>
                 </div>
                 <div>

@@ -26,7 +26,7 @@ function ManualPage() {
   return (
     <article className="mx-auto max-w-6xl px-4 py-10 md:px-8">
       <Link to="/manuais" className="font-mono text-xs uppercase link-under">← Manuais</Link>
-      <header className="mt-6 border-b-2 border-ink pb-6">
+      <header className="mt-6 border-b border-border pb-6">
         <p className="tag bg-deep text-paper">{m.category}</p>
         <h1 className="display mt-3 text-5xl md:text-7xl">{m.title}</h1>
         <p className="mt-3 max-w-2xl text-lg">{m.description}</p>
@@ -35,14 +35,14 @@ function ManualPage() {
       <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_14rem]">
         <div>
           {headings.length > 2 && (
-            <details className="mb-6 border-2 border-ink p-3 lg:hidden">
+            <details className="mb-6 border border-border p-3 lg:hidden">
               <summary className="font-mono text-sm uppercase">Sumário</summary>
               <Toc headings={headings} />
             </details>
           )}
           <div className="prose-cacc" dangerouslySetInnerHTML={{ __html: html }} />
           {m.related.length > 0 && (
-            <aside className="mt-10 max-w-[68ch] bg-neon p-5">
+            <aside className="mt-10 max-w-[68ch] border border-border bg-deep p-5">
               <h2 className="display text-2xl">Recursos relacionados</h2>
               <ul className="mt-2">
                 {m.related.map((r) => <li key={r.url}><a href={r.url} target="_blank" rel="noreferrer" className="link-under">{r.label}</a></li>)}

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/acervo")({
   component: Acervo,
 });
 
-const tones = ["bg-deep text-neon", "bg-violet text-paper", "bg-coral text-ink", "bg-ink text-neon", "bg-neon text-ink"];
+const tones = ["bg-deep text-neon", "bg-violet text-ink", "bg-coral text-ink", "bg-ink text-neon", "bg-deep text-neon"];
 
 function Acervo() {
   const [cat, setCat] = useState<string | null>(null);
@@ -27,10 +27,10 @@ function Acervo() {
       <PageHead n="05" title="Acervo" kicker="Biblioteca" tone="violet">
         Livros, cursos, vídeos e ferramentas gratuitas, organizados por área.
       </PageHead>
-      <div className="sticky top-[58px] z-30 border-b-2 border-ink bg-paper">
+      <div className="sticky top-[61px] z-30 border-b border-border bg-background">
         <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-3 md:px-8" role="group" aria-label="Filtrar por área">
           {[null, ...cats].map((c) => (
-            <button key={c ?? "all"} onClick={() => setCat(c)} aria-pressed={cat === c} className={`shrink-0 border-2 border-ink px-3 py-1 text-sm font-semibold ${cat === c ? "bg-ink text-neon" : "hover:bg-neon"}`}>
+            <button key={c ?? "all"} onClick={() => setCat(c)} aria-pressed={cat === c} className={`shrink-0 border border-border px-3 py-1 text-sm font-semibold ${cat === c ? "bg-ink text-neon" : "hover:bg-neon/10"}`}>
               {c ?? "Tudo"}
             </button>
           ))}

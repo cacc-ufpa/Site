@@ -30,11 +30,11 @@ function Gestao() {
       <section className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           {destaque.map((m) => (
-            <div key={m.name} className="flex flex-col border-t-4 border-ink pt-5">
+            <div key={m.name} className="flex flex-col border-t border-border pt-5">
               <Cover src={m.photo} alt={m.name} tone="neon" className="!block !h-[320px] !w-full object-contain object-left" />
               <div className="min-w-0">
-                <p className="tag mt-4 self-start bg-violet text-paper">{m.role}</p>
-                <h2 className="display mt-3 text-4xl">{m.name}</h2>
+                <p className="tag mt-4 self-start bg-violet text-ink">{m.role}</p>
+                <h2 className="font-title mt-3 break-words text-3xl font-bold">{m.name}</h2>
                 <p className="mt-2 text-sm">{m.bio}</p>
                 <Links links={m.links} />
               </div>
@@ -43,7 +43,7 @@ function Gestao() {
         </div>
       </section>
       <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-4 py-14 md:px-8 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-x-6 gap-y-10 px-4 py-14 sm:grid-cols-2 md:px-8 lg:grid-cols-4">
           {demais.map((m, i) => (
             <div key={m.name} className="min-w-0">
               <Cover src={m.photo} alt={m.name} tone={(["deep", "coral", "violet"] as const)[i % 3]} className="!block !h-[300px] !w-full object-cover" />

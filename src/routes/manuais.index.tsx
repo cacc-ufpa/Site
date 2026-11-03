@@ -24,11 +24,11 @@ function Manuais() {
       <div className="mx-auto max-w-5xl px-4 py-14 md:px-8">
         {cats.map((c) => (
           <section key={c} className="mb-12 grid gap-4 md:grid-cols-[14rem_1fr]">
-            <h2 className="font-mono text-sm uppercase text-deep">{c}</h2>
+            <h2 className="font-mono text-sm uppercase text-violet">{c}</h2>
             <ul>
               {manuais.filter((m) => m.category === c).map((m) => (
-                <li key={m.slug} className="border-t-2 border-ink">
-                  <Link to="/manuais/$slug" params={{ slug: m.slug }} className="block py-4 hover:bg-neon">
+                <li key={m.slug} className="border-t border-border">
+                  <Link to="/manuais/$slug" params={{ slug: m.slug }} className="block py-4 hover:bg-neon/10">
                     <span className="text-xl font-semibold">{m.title}</span>
                     <span className="block text-sm text-muted-foreground">{m.description}</span>
                   </Link>

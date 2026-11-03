@@ -22,7 +22,7 @@ function Card({ e, i }: { e: Evento; i: number }) {
     <Link to="/eventos/$slug" params={{ slug: e.slug }} className="group block">
       <Cover src={e.image} alt={e.title} tone={tones[i % 4]} className={`w-full ${i % 3 === 1 ? "aspect-square" : "aspect-[3/4]"}`} />
       <p className="mt-3 font-mono text-xs uppercase">{d.full} · {e.time} · {e.category}</p>
-      <h3 className="display mt-1 text-3xl group-hover:text-violet">{e.title}</h3>
+      <h3 className="font-title mt-1 text-2xl font-bold group-hover:text-violet">{e.title}</h3>
       <p className="text-sm text-muted-foreground">{e.location}</p>
     </Link>
   );
@@ -37,11 +37,11 @@ function Eventos() {
       </PageHead>
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         {main && (
-          <Link to="/eventos/$slug" params={{ slug: main.slug }} className="group mb-16 grid border-2 border-ink md:grid-cols-[2fr_3fr]">
+          <Link to="/eventos/$slug" params={{ slug: main.slug }} className="group mb-16 grid overflow-hidden border border-border md:grid-cols-[2fr_3fr]">
             <Cover src={main.image} alt={main.title} tone="violet" className="aspect-[3/4] w-full md:aspect-auto md:min-h-[28rem]" />
-            <div className="flex flex-col bg-neon p-6 md:p-10">
-              <span className="tag self-start bg-ink text-neon">Em destaque</span>
-              <h2 className="display mt-6 text-6xl md:text-8xl">{main.title}</h2>
+            <div className="flex flex-col bg-card p-6 text-card-foreground md:p-10">
+              <span className="tag self-start bg-neon text-ink">Em destaque</span>
+              <h2 className="font-title mt-6 break-words text-4xl font-bold leading-tight md:text-5xl">{main.title}</h2>
               <dl className="mt-auto grid grid-cols-2 gap-4 pt-10 font-mono text-sm">
                 <div><dt className="opacity-60">Data</dt><dd>{(fmtDate(main.date) as any).full}</dd></div>
                 <div><dt className="opacity-60">Horário</dt><dd>{main.time}</dd></div>

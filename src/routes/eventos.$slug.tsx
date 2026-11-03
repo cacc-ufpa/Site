@@ -38,14 +38,14 @@ function EventoPage() {
             {e.past && <span className="tag bg-ink text-paper">Encerrado</span>}
           </div>
           <h1 className="display mt-4 text-6xl md:text-8xl">{e.title}</h1>
-          <dl className="mt-8 grid grid-cols-2 gap-4 border-y-2 border-ink py-4 font-mono text-sm">
+          <dl className="mt-8 grid grid-cols-2 gap-4 border-y border-border py-4 font-mono text-sm">
             <div><dt className="opacity-60">Data</dt><dd>{d.full}</dd></div>
             <div><dt className="opacity-60">Horário</dt><dd>{e.time}</dd></div>
             <div><dt className="opacity-60">Local</dt><dd>{e.location}</dd></div>
             <div><dt className="opacity-60">Organização</dt><dd>{e.organizer}</dd></div>
           </dl>
           {e.registration_url && !e.past && (
-            <a href={e.registration_url} target="_blank" rel="noreferrer" className="display mt-6 inline-block bg-neon px-5 py-3 text-2xl hover:bg-ink hover:text-neon">
+            <a href={e.registration_url} target="_blank" rel="noreferrer" className="display mt-6 inline-block bg-neon text-ink px-5 py-3 text-2xl hover:bg-ink hover:text-neon">
               Inscrever-se →
             </a>
           )}
