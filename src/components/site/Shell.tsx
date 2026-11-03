@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code2, Globe2 } from "lucide-react";
 import { site } from "@/lib/content";
 
 const NAV = [
@@ -16,23 +16,24 @@ const NAV = [
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-ink bg-paper">
+    <header className="sticky top-0 z-40 border-b border-border bg-background">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between px-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2 py-3" aria-label="CACC — Início">
-          <span className="display bg-ink px-2 py-1 text-2xl text-neon">CACC</span>
-          <span className="hidden font-mono text-[0.65rem] uppercase leading-tight sm:block">
+        <Link to="/" className="flex items-center gap-3 py-3" aria-label="CACC — Início">
+          <span className="font-mono bg-neon px-2 py-0.5 text-2xl font-bold leading-tight text-ink">CACC</span>
+          <span className="hidden font-mono text-[0.6rem] uppercase leading-tight sm:block">
             Centro Acadêmico de
             <br />
             Ciência da Computação
           </span>
         </Link>
+        <span className="mr-auto ml-5 hidden items-center gap-2 border-l border-border pl-5 font-mono font-bold sm:flex"><Globe2 className="size-5" />UFPA</span>
         <nav aria-label="Principal" className="hidden lg:flex">
           {NAV.slice(1).map((i) => (
             <Link
               key={i.to}
               to={i.to}
-              className="group flex items-center gap-1 border-l border-border px-4 text-sm font-semibold hover:bg-neon"
-              activeProps={{ className: "bg-ink text-neon hover:bg-ink" }}
+              className="group flex items-center gap-1 border-b-2 border-transparent px-3 text-xs hover:text-neon"
+              activeProps={{ className: "border-neon text-paper" }}
             >
               <span className="font-mono text-[0.6rem] opacity-60">{i.n}</span>
               {i.label}
@@ -40,7 +41,8 @@ export function Header() {
           ))}
         </nav>
         <button
-          className="flex items-center lg:hidden"
+          type="button"
+          className="flex h-9 w-9 items-center justify-center lg:hidden"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -49,7 +51,7 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav aria-label="Principal (celular)" className="border-t-2 border-ink bg-ink lg:hidden">
+        <nav aria-label="Principal (celular)" className="border-t border-border bg-ink lg:hidden">
           {NAV.map((i) => (
             <Link
               key={i.to}
@@ -71,10 +73,10 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-paper">
+    <footer className="bg-background text-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[2fr_1fr_1fr] md:px-8">
         <div>
-          <p className="display text-6xl text-neon md:text-8xl">CACC</p>
+          <p className="display text-6xl text-neon md:text-7xl">CACC</p>
           <p className="mt-4 max-w-sm text-sm text-paper/70">
             Portal do Centro Acadêmico de Ciência da Computação. Feito pela comunidade, para a comunidade.
           </p>
@@ -99,15 +101,16 @@ export function Footer() {
 export function Placeholder({ label, tone = "deep", className = "" }: { label: string; tone?: "deep" | "violet" | "coral" | "ink" | "neon"; className?: string }) {
   const tones = {
     deep: "bg-deep text-neon",
-    violet: "bg-violet text-paper",
-    coral: "bg-coral text-ink",
+    violet: "bg-deep text-violet",
+    coral: "bg-deep text-neon",
     ink: "bg-ink text-neon",
-    neon: "bg-neon text-ink",
+    neon: "bg-deep text-neon",
   };
   return (
-    <div className={`grid-paper relative flex flex-col justify-between overflow-hidden p-3 ${tones[tone]} ${className}`} role="img" aria-label={`Sem imagem: ${label}`}>
+    <div className={`placeholder-art grid-paper relative flex flex-col justify-between overflow-hidden border border-border p-5 ${tones[tone]} ${className}`} role="img" aria-label={`Sem imagem: ${label}`}>
       <span className="tag bg-ink/80 text-paper self-start">imagem pendente</span>
-      <span className="display line-clamp-3 text-2xl">{label}</span>
+      <Code2 className="my-4 size-16 self-center text-neon" strokeWidth={1} aria-hidden="true" />
+      <span className="font-title line-clamp-3 text-xl font-bold text-paper">{label}</span>
     </div>
   );
 }
@@ -118,20 +121,20 @@ export function Cover({ src, alt, tone = "deep", className = "" }: { src: string
 
 export function PageHead({ n, title, kicker, tone = "paper", children }: { n: string; title: string; kicker: string; tone?: "paper" | "ink" | "neon" | "violet" | "deep"; children?: React.ReactNode }) {
   const tones = {
-    paper: "bg-paper text-ink",
-    ink: "bg-ink text-paper",
-    neon: "bg-neon text-ink",
-    violet: "bg-violet text-paper",
-    deep: "bg-deep text-paper",
+    paper: "bg-background text-foreground",
+    ink: "bg-background text-foreground",
+    neon: "bg-background text-foreground",
+    violet: "bg-background text-foreground",
+    deep: "bg-background text-foreground",
   };
   return (
-    <section className={`border-b-2 border-ink ${tones[tone]}`}>
+    <section className={`border-b border-border ${tones[tone]}`}>
       <div className="mx-auto grid max-w-7xl gap-6 px-4 pb-10 pt-12 md:grid-cols-[auto_1fr] md:px-8 md:pt-20">
-        <span className="display text-7xl opacity-30 md:text-9xl">{n}</span>
+        <span className="font-mono text-xl text-violet md:text-2xl">{n}</span>
         <div>
-          <p className="tag mb-4 bg-ink text-neon">{kicker}</p>
-          <h1 className="display text-6xl md:text-9xl">{title}</h1>
-          {children && <div className="mt-6 max-w-2xl text-lg">{children}</div>}
+          <p className="tag mb-4 text-neon">{kicker}</p>
+          <h1 className="display text-6xl md:text-8xl">{title}</h1>
+          {children && <div className="mt-6 max-w-2xl text-sm text-muted-foreground">{children}</div>}
         </div>
       </div>
     </section>

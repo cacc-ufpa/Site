@@ -27,8 +27,8 @@ function Lojinha() {
         {produtos.map((p, i) => (
           <button key={p.slug} onClick={() => setSel(p)} className="group text-left">
             <Cover src={p.images[0] ?? ""} alt={p.title} tone={i % 2 ? "deep" : "ink"} className="aspect-square w-full" />
-            <div className="mt-3 flex items-baseline justify-between gap-4 border-b-2 border-ink pb-2">
-              <h2 className="display text-3xl group-hover:text-violet">{p.title}</h2>
+            <div className="mt-3 flex items-baseline justify-between gap-4 border-b border-border pb-2">
+              <h2 className="font-title text-2xl font-bold group-hover:text-violet">{p.title}</h2>
               <span className="font-mono text-sm">{p.price}</span>
             </div>
           </button>
@@ -36,7 +36,7 @@ function Lojinha() {
       </div>
       <Dialog open={!!sel} onOpenChange={(o) => !o && setSel(null)}>
         {sel && (
-          <DialogContent className="max-w-3xl rounded-none border-2 border-ink bg-paper">
+          <DialogContent className="max-w-3xl rounded-none border border-border bg-background">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="grid gap-2">
                 {sel.images.length ? sel.images.map((src, i) => <img key={src} src={src} alt={`${sel.title} — foto ${i + 1}`} className="aspect-square w-full object-cover" />) : <Cover src="" alt={sel.title} className="aspect-square w-full" />}
@@ -51,7 +51,7 @@ function Lojinha() {
                 {sel.sizes.length > 0 && (
                   <div className="mt-4">
                     <p className="font-mono text-xs uppercase">Tamanhos</p>
-                    <div className="mt-1 flex gap-1">{sel.sizes.map((s) => <span key={s} className="border-2 border-ink px-3 py-1 font-mono">{s}</span>)}</div>
+                    <div className="mt-1 flex gap-1">{sel.sizes.map((s) => <span key={s} className="border border-border px-3 py-1 font-mono">{s}</span>)}</div>
                   </div>
                 )}
                 <a href={whatsappLink(sel)} target="_blank" rel="noreferrer" className="display mt-6 inline-block bg-neon px-5 py-3 text-2xl text-ink hover:bg-ink hover:text-neon">
