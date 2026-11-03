@@ -22,16 +22,24 @@ export function parseFrontmatter(src: string): { data: any; body: string } {
 const slugify = (s: string) =>
   s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+
 export type Heading = { id: string; text: string };
+
 export function renderMarkdown(body: string): { html: string; headings: Heading[] } {
   const headings: Heading[] = [];
   let html = marked.parse(body, { async: false }) as string;
-  html = html.replace(/<h2>(.*?)<\/h2>/g, (_, inner: string) => {
+
+  html = html.replace(/<h([1-6])>(.*?)<\/h\1>/g, (_, level: string, inner: string) => {
     const text = inner.replace(/<[^>]+>/g, "");
     const id = slugify(text);
-    headings.push({ id, text });
-    return `<h2 id="${id}">${inner}</h2>`;
+
+    if (level === "2") {
+      headings.push({ id, text });
+    }
+
+    return `<h${level} id="${id}">${inner}</h${level}>`;
   });
+
   return { html, headings };
 }
 
