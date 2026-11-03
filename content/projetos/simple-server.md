@@ -1,7 +1,7 @@
 ---
-title: "Grade de Horários"
-author: "Equipe fictícia (demonstração)"
-description: "Monte sua grade semestral sem conflitos."
+title: "Simple HTTP Server in C"
+author: "Ícaro Santos"
+description: "Implementação minimalista de um servidor HTTP escrito em C puro"
 image: ""
 technologies:
   - TypeScript
