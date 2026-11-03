@@ -1,8 +1,7 @@
 ---
-# Configuração central do site
-whatsapp: "5591900000000"   # número fictício — substituir (somente dígitos, com DDI)
+whatsapp: "5591900000000"
 vote_url: "https://forms.gle/substituir-pelo-formulario"
-instagram: ""
-email: ""
+instagram: "https://www.instagram.com/cacc.ufpa/"
+email: "mailto:cacc.ufpa@gmail.com"
 gestao_periodo: "2026 — 2027"
 ---

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Cover } from "@/components/site/Shell";
 import { acervo, avisos, fmtDate, manuais, projetos, proximosEventos } from "@/lib/content";
+import ReactMarkdown from "react-markdown";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,8 +32,8 @@ function Home() {
         <div className="mx-auto grid max-w-7xl md:grid-cols-1">
           <div className="px-4 pb-12 pt-10 md:col-span-8 md:px-8 md:pt-16">
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase">
-              <span className="tag bg-ink text-neon">Edição permanente</span>
-              <span>Centro Acadêmico de Ciência da Computação</span>
+              <span className="tag bg-ink text-neon">CACC</span>
+              <span>Universidade Fedderal do Pará</span>
             </div>
             <h1 className="display mt-8 text-[12vw] leading-tight md:text-[7rem]">
     		Centro{' '}
@@ -56,9 +57,26 @@ function Home() {
       {aviso && (
         <section className={aviso.important ? "bg-violet text-paper" : "bg-neon text-ink"}>
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:gap-8 md:px-8">
-            <span className="tag self-start bg-coral text-ink">Aviso do CA</span>
+            <span className="tag self-start bg-white text-ink">ATENÇÃO</span>
             <p className="display text-3xl md:text-4xl">{aviso.title}</p>
-            <p className="text-sm opacity-90 md:ml-auto md:max-w-sm">{aviso.body.trim()}</p>
+            <div className="text-sm opacity-90 md:ml-auto md:max-w-sm">
+		  <ReactMarkdown
+		    components={{
+		      a: ({ href, children }) => (
+		        <a
+		          href={href}
+		          target="_blank"
+		          rel="noreferrer"
+		          className="underline font-semibold hover:opacity-70"
+		        >
+		          {children}
+		        </a>
+		      ),
+		    }}
+		  >
+		    {aviso.body.trim()}
+		  </ReactMarkdown>
+		</div> 
           </div>
         </section>
       )}
