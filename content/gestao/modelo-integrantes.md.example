@@ -1,0 +1,24 @@
+---
+# ARQUIVO ESPECIAL: use este modelo para EDITAR content/gestao/integrantes.md.
+# Não crie um segundo arquivo .md na pasta gestao.
+demo: true # Mude para false somente quando os nomes/mandatos estiverem verificados.
+intro: "Apresentação da gestão e de seu período de mandato."
+photo: "" # Foto coletiva em /images/gestao/..., se houver.
+members:
+  - name: "NOME COMPLETO — SUBSTITUIR"
+    role: "Presidência"
+    bio: "Breve apresentação da pessoa e de suas atribuições."
+    photo: "" # Ex.: /images/gestao/nome.jpg
+    highlight: true # true para destaque visual de integrantes principais.
+    links:
+      - label: "Página de contato"
+        url: "https://exemplo.org"
+  - name: "OUTRO NOME — SUBSTITUIR"
+    role: "Secretaria Geral"
+    bio: "Breve apresentação."
+    photo: ""
+    highlight: false
+    links: []
+---
+
+<!-- O conteúdo da Gestão é lido do frontmatter. O texto após o --- não é renderizado. -->

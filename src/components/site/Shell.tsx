@@ -9,8 +9,9 @@ const NAV = [
   { to: "/gestao", label: "Gestão", n: "02" },
   { to: "/projetos", label: "Projetos", n: "03" },
   { to: "/lojinha", label: "Lojinha", n: "04" },
-  { to: "/acervo", label: "Acervo", n: "05" },
-  { to: "/manuais", label: "Manuais", n: "06" },
+  { to: "/vida-academica", label: "Vida Acadêmica", n: "05" },
+  { to: "/oportunidades", label: "Oportunidades", n: "06" },
+  { to: "/noticias", label: "Notícias", n: "07" },
 ] as const;
 
 export function Header() {
@@ -27,8 +28,8 @@ export function Header() {
           </span>
         </Link>
         <span className="mr-auto ml-5 hidden items-center gap-2 border-l border-border pl-5 font-mono font-bold sm:flex"><Globe2 className="size-5" />UFPA</span>
-        <nav aria-label="Principal" className="hidden lg:flex">
-          {NAV.slice(1).map((i) => (
+        <nav aria-label="Principal" className="hidden xl:flex">
+          {NAV.map((i) => (
             <Link
               key={i.to}
               to={i.to}
@@ -42,7 +43,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="flex h-9 w-9 items-center justify-center lg:hidden"
+          className="flex h-9 w-9 items-center justify-center xl:hidden"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -51,7 +52,7 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav aria-label="Principal (celular)" className="border-t border-border bg-ink lg:hidden">
+        <nav aria-label="Principal (celular)" className="border-t border-border bg-ink xl:hidden">
           {NAV.map((i) => (
             <Link
               key={i.to}

@@ -1,0 +1,28 @@
+---
+title: "Título da oportunidade"
+description: "Descrição breve da bolsa, vaga, estágio ou evento."
+category: "Estágio"
+organization: "Instituição responsável"
+date: "2026-11-03"
+deadline: "2026-12-10"
+status: "aberta"
+source_url: "https://www.computacao.ufpa.br/"
+tags:
+  - "Computação"
+  - "Seleção"
+published: false
+---
+
+> Modelo de preenchimento. Remova esta mensagem antes de publicar.
+
+## Sobre a oportunidade
+
+Descrição oficial resumida.
+
+## Requisitos
+
+- Verificar requisitos no edital oficial.
+
+## Como se inscrever
+
+Consulte a página oficial indicada no campo `source_url`.

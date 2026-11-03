@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown";
 import { Cover } from "@/components/site/Shell";
 import { acervo, avisos, fmtDate, manuais, projetos, proximosEventos } from "@/lib/content";
 
+import { PortalHomeNews, PortalHomeOpportunities, PortalAcademicShortcuts } from "@/components/site/PortalHome";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -20,6 +22,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const [main, ...rest] = proximosEventos;
+  const featuredSummary = main ? getEventSummary(main.body) : "";
   const aviso = avisos[0];
   const destaques = projetos.slice(0, 4);
   const materiais = [
@@ -93,27 +96,59 @@ function Home() {
         <SectionTitle n="01" title="Próximos eventos" to="/eventos" />
         {main ? (
           <div className="grid gap-5 md:grid-cols-12">
-            <Link to="/eventos/$slug" params={{ slug: main.slug }} className="group grid overflow-hidden border border-paper/45 md:col-span-8 md:grid-cols-[1fr_1.05fr]">
-              <Cover src={main.image} alt={main.title} tone="violet" className="aspect-[4/3] h-full min-h-64 w-full" />
-              <div className="relative flex flex-col bg-card p-6 text-paper">
+            <Link
+              to="/eventos/$slug"
+              params={{ slug: main.slug }}
+              className="group grid min-w-0 overflow-hidden border border-paper/45 md:col-span-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:h-[430px]"
+            >
+              <Cover
+                src={main.image}
+                alt={main.title}
+                tone="violet"
+                className="aspect-[4/3] min-h-64 w-full md:aspect-auto md:h-full md:min-h-[345px] lg:min-h-0"
+              />
+
+              <div className="relative flex min-w-0 flex-col bg-card p-5 text-paper md:min-h-[345px] md:p-5 lg:min-h-0 lg:p-6">
+                {/* Data, categoria e título: hierarquia editorial da referência */}
                 <DateBlock date={main.date} />
-                <p className="tag mt-4 self-start bg-violet text-ink">{main.category}</p>
-                <h3 className="font-title mt-3 text-3xl font-bold leading-tight group-hover:text-neon">{main.title}</h3>
-                <div className="mt-auto flex flex-wrap gap-3 pt-6 pr-8 font-mono text-[0.65rem]">
-                  <span className="flex items-center gap-2"><Clock3 className="size-4" />{main.time}</span>
-                  <span className="flex items-center gap-2"><MapPin className="size-4" />{main.location}</span>
+                <p className="tag mt-2 self-start bg-violet px-2 py-1 text-xs font-semibold text-ink">
+                  {main.category}
+                </p>
+                <h3 className="font-title mt-3 max-w-[12ch] text-[clamp(2rem,3vw,2.6rem)] font-bold leading-[1.02] tracking-tight group-hover:text-neon">
+                  {main.title}
+                </h3>
+
+                {/* Informações e resumo na parte inferior do cartão */}
+                <div className="mt-auto pt-5">
+                  <div className="flex flex-wrap items-center gap-y-2 pr-7 font-mono text-sm leading-snug">
+                    <span className="flex items-center gap-2 pr-3">
+                      <Clock3 className="size-4 shrink-0" />
+                      {main.time}
+                    </span>
+                    <span className="flex min-w-0 items-center gap-2 border-l border-paper/50 pl-3">
+                      <MapPin className="size-4 shrink-0" />
+                      <span className="min-w-0 break-words">{main.location}</span>
+                    </span>
+                  </div>
+
+                  <p className="mt-3 line-clamp-2 max-w-[40ch] pr-7 text-sm leading-snug text-paper/75">
+                    {featuredSummary || "Confira as informações completas deste evento."}
+                  </p>
                 </div>
-                <span className="absolute bottom-4 right-4 grid size-7 place-items-center bg-neon text-ink"><ArrowUpRight className="size-5" /></span>
+
+                <span className="absolute bottom-4 right-4 grid size-7 place-items-center bg-neon text-ink transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  <ArrowUpRight className="size-5" />
+                </span>
               </div>
             </Link>
             <ul className="md:col-span-4 md:border-l md:border-paper/40 md:pl-5">
               {rest.slice(0, 4).map((e) => (
                 <li key={e.slug} className="border-t border-paper/45">
                   <Link to="/eventos/$slug" params={{ slug: e.slug }} className="flex items-start gap-4 py-5 hover:text-neon">
-                    <span className="display w-16 shrink-0 text-4xl">{(fmtDate(e.date) as any).day}</span>
+                    <span className="display w-16 shrink-0 text-4xl lg:text-[2.75rem]">{(fmtDate(e.date) as any).day}</span>
                     <span>
-                      <span className="font-mono text-[0.6rem] uppercase text-violet">{(fmtDate(e.date) as any).month} · {e.category}</span>
-                      <span className="font-title block text-base font-semibold">{e.title}</span>
+                      <span className="font-mono text-xs uppercase text-violet">{(fmtDate(e.date) as any).month} · {e.category}</span>
+                      <span className="font-title block text-lg font-semibold leading-snug">{e.title}</span>
                     </span>
                   </Link>
                 </li>
@@ -126,10 +161,13 @@ function Home() {
         )}
       </section>
 
+      <PortalHomeNews />
+      <PortalHomeOpportunities />
+
       {/* Projetos */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-          <SectionTitle n="03" title="Feito por aqui" to="/projetos" />
+          <SectionTitle n="04" title="Feito por aqui" to="/projetos" />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {destaques.map((p, i) => (
               <Link key={p.slug} to="/projetos/$slug" params={{ slug: p.slug }} className={`project-card group relative flex min-h-64 flex-col border border-paper/45 p-5 ${i % 2 ? "project-card-alt" : ""}`}>
@@ -144,11 +182,13 @@ function Home() {
         </div>
       </section>
 
+      <PortalAcademicShortcuts />
+
       {/* Materiais */}
       <section className="bg-ink text-paper">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[1fr_2fr] md:px-8">
           <div>
-            <p className="font-mono text-xs text-neon">05 / 06</p>
+            <p className="font-mono text-xs text-neon">06 / ACERVO</p>
             <h2 className="display mt-2 text-6xl">Últimos materiais</h2>
             <div className="mt-6 flex gap-4 text-sm">
               <Link to="/acervo" className="link-under">Acervo</Link>
@@ -197,8 +237,23 @@ function DateBlock({ date }: { date: string }) {
   const d = fmtDate(date) as any;
   return (
     <div className="flex items-end gap-2 text-neon">
-      <span className="display text-7xl">{d.day}</span>
-      <span className="pb-2 font-mono text-sm uppercase">{d.month}<br />{d.year}</span>
+      <span className="display text-[4.5rem] leading-[0.85] lg:text-[5rem]">{d.day}</span>
+      <span className="pb-1 font-mono text-sm uppercase leading-tight text-neon">{d.month}<br />{d.year}</span>
     </div>
   );
+}
+
+/** Extract a short real excerpt from the event's existing Markdown body. */
+function getEventSummary(body: string): string {
+  const paragraph = body
+    .split(/\r?\n\s*\r?\n/)
+    .map((part) => part.trim())
+    .find((part) => part && !/^(?:#{1,6}\s|>|[-*+]\s|\d+\.\s|```|!\[|<)/.test(part));
+
+  return (paragraph ?? "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`~]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }

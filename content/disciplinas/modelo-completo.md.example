@@ -1,0 +1,34 @@
+---
+title: "NOME OFICIAL DA DISCIPLINA — SUBSTITUIR"
+code: "" # Código oficial do SIGAA/PPC, se confirmado.
+ppc: ["2024"] # Lista de PPCs, como ["2010"] ou ["2010", "2024"].
+semester: "1" # Número como string; usado no filtro e ordenação.
+workload: "" # Ex.: "60h"; não invente carga horária.
+prerequisites: [] # Lista: ["Código ou nome de disciplina anterior"].
+description: "Breve resumo fiel à ementa oficial."
+source_url: "" # Link oficial do PPC ou ementa.
+published: false
+draft: true
+---
+
+> MODELO. Não publique informações curriculares sem conferir o PPC correspondente.
+
+## Ementa
+
+Transcreva ou resuma corretamente a ementa oficial, citando a fonte.
+
+## Objetivos e habilidades
+
+Descreva o que a disciplina pretende desenvolver.
+
+## Bibliografia básica
+
+- Referência bibliográfica conforme o PPC.
+
+## Materiais complementares
+
+- Livro, vídeo, documentação ou curso de livre acesso.
+
+## Dicas de estudo da comunidade
+
+Identifique claramente estas dicas como não oficiais.

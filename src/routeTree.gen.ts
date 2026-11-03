@@ -17,8 +17,16 @@ import { Route as EventosIndexRouteImport } from './routes/eventos.index'
 import { Route as EventosSlugRouteImport } from './routes/eventos.$slug'
 import { Route as ManuaisIndexRouteImport } from './routes/manuais.index'
 import { Route as ManuaisSlugRouteImport } from './routes/manuais.$slug'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as OportunidadesIndexRouteImport } from './routes/oportunidades.index'
+import { Route as OportunidadesSlugRouteImport } from './routes/oportunidades.$slug'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
+import { Route as VidaAcademicaIndexRouteImport } from './routes/vida-academica.index'
+import { Route as VidaAcademicaSlugRouteImport } from './routes/vida-academica.$slug'
+import { Route as VidaAcademicaDisciplinasIndexRouteImport } from './routes/vida-academica.disciplinas.index'
+import { Route as VidaAcademicaDisciplinasSlugRouteImport } from './routes/vida-academica.disciplinas.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -60,6 +68,26 @@ const ManuaisSlugRoute = ManuaisSlugRouteImport.update({
   path: '/manuais/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OportunidadesIndexRoute = OportunidadesIndexRouteImport.update({
+  id: '/oportunidades/',
+  path: '/oportunidades/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OportunidadesSlugRoute = OportunidadesSlugRouteImport.update({
+  id: '/oportunidades/$slug',
+  path: '/oportunidades/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjetosIndexRoute = ProjetosIndexRouteImport.update({
   id: '/projetos/',
   path: '/projetos/',
@@ -70,6 +98,28 @@ const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
   path: '/projetos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VidaAcademicaIndexRoute = VidaAcademicaIndexRouteImport.update({
+  id: '/vida-academica/',
+  path: '/vida-academica/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VidaAcademicaSlugRoute = VidaAcademicaSlugRouteImport.update({
+  id: '/vida-academica/$slug',
+  path: '/vida-academica/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VidaAcademicaDisciplinasIndexRoute =
+  VidaAcademicaDisciplinasIndexRouteImport.update({
+    id: '/vida-academica/disciplinas/',
+    path: '/vida-academica/disciplinas/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VidaAcademicaDisciplinasSlugRoute =
+  VidaAcademicaDisciplinasSlugRouteImport.update({
+    id: '/vida-academica/disciplinas/$slug',
+    path: '/vida-academica/disciplinas/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -78,10 +128,18 @@ export interface FileRoutesByFullPath {
   '/lojinha': typeof LojinhaRoute
   '/eventos/$slug': typeof EventosSlugRoute
   '/manuais/$slug': typeof ManuaisSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/oportunidades/$slug': typeof OportunidadesSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/vida-academica/$slug': typeof VidaAcademicaSlugRoute
   '/eventos/': typeof EventosIndexRoute
   '/manuais/': typeof ManuaisIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
+  '/oportunidades/': typeof OportunidadesIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
+  '/vida-academica/': typeof VidaAcademicaIndexRoute
+  '/vida-academica/disciplinas/$slug': typeof VidaAcademicaDisciplinasSlugRoute
+  '/vida-academica/disciplinas/': typeof VidaAcademicaDisciplinasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -90,10 +148,18 @@ export interface FileRoutesByTo {
   '/lojinha': typeof LojinhaRoute
   '/eventos/$slug': typeof EventosSlugRoute
   '/manuais/$slug': typeof ManuaisSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/oportunidades/$slug': typeof OportunidadesSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/vida-academica/$slug': typeof VidaAcademicaSlugRoute
   '/eventos': typeof EventosIndexRoute
   '/manuais': typeof ManuaisIndexRoute
+  '/noticias': typeof NoticiasIndexRoute
+  '/oportunidades': typeof OportunidadesIndexRoute
   '/projetos': typeof ProjetosIndexRoute
+  '/vida-academica': typeof VidaAcademicaIndexRoute
+  '/vida-academica/disciplinas/$slug': typeof VidaAcademicaDisciplinasSlugRoute
+  '/vida-academica/disciplinas': typeof VidaAcademicaDisciplinasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -103,10 +169,18 @@ export interface FileRoutesById {
   '/lojinha': typeof LojinhaRoute
   '/eventos/$slug': typeof EventosSlugRoute
   '/manuais/$slug': typeof ManuaisSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/oportunidades/$slug': typeof OportunidadesSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/vida-academica/$slug': typeof VidaAcademicaSlugRoute
   '/eventos/': typeof EventosIndexRoute
   '/manuais/': typeof ManuaisIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
+  '/oportunidades/': typeof OportunidadesIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
+  '/vida-academica/': typeof VidaAcademicaIndexRoute
+  '/vida-academica/disciplinas/$slug': typeof VidaAcademicaDisciplinasSlugRoute
+  '/vida-academica/disciplinas/': typeof VidaAcademicaDisciplinasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -117,10 +191,18 @@ export interface FileRouteTypes {
     | '/lojinha'
     | '/eventos/$slug'
     | '/manuais/$slug'
+    | '/noticias/$slug'
+    | '/oportunidades/$slug'
     | '/projetos/$slug'
+    | '/vida-academica/$slug'
     | '/eventos/'
     | '/manuais/'
+    | '/noticias/'
+    | '/oportunidades/'
     | '/projetos/'
+    | '/vida-academica/'
+    | '/vida-academica/disciplinas/$slug'
+    | '/vida-academica/disciplinas/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -129,10 +211,18 @@ export interface FileRouteTypes {
     | '/lojinha'
     | '/eventos/$slug'
     | '/manuais/$slug'
+    | '/noticias/$slug'
+    | '/oportunidades/$slug'
     | '/projetos/$slug'
+    | '/vida-academica/$slug'
     | '/eventos'
     | '/manuais'
+    | '/noticias'
+    | '/oportunidades'
     | '/projetos'
+    | '/vida-academica'
+    | '/vida-academica/disciplinas/$slug'
+    | '/vida-academica/disciplinas'
   id:
     | '__root__'
     | '/'
@@ -141,10 +231,18 @@ export interface FileRouteTypes {
     | '/lojinha'
     | '/eventos/$slug'
     | '/manuais/$slug'
+    | '/noticias/$slug'
+    | '/oportunidades/$slug'
     | '/projetos/$slug'
+    | '/vida-academica/$slug'
     | '/eventos/'
     | '/manuais/'
+    | '/noticias/'
+    | '/oportunidades/'
     | '/projetos/'
+    | '/vida-academica/'
+    | '/vida-academica/disciplinas/$slug'
+    | '/vida-academica/disciplinas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -154,10 +252,18 @@ export interface RootRouteChildren {
   LojinhaRoute: typeof LojinhaRoute
   EventosSlugRoute: typeof EventosSlugRoute
   ManuaisSlugRoute: typeof ManuaisSlugRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
+  OportunidadesSlugRoute: typeof OportunidadesSlugRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
+  VidaAcademicaSlugRoute: typeof VidaAcademicaSlugRoute
   EventosIndexRoute: typeof EventosIndexRoute
   ManuaisIndexRoute: typeof ManuaisIndexRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
+  OportunidadesIndexRoute: typeof OportunidadesIndexRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
+  VidaAcademicaIndexRoute: typeof VidaAcademicaIndexRoute
+  VidaAcademicaDisciplinasSlugRoute: typeof VidaAcademicaDisciplinasSlugRoute
+  VidaAcademicaDisciplinasIndexRoute: typeof VidaAcademicaDisciplinasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -218,6 +324,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManuaisSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oportunidades/': {
+      id: '/oportunidades/'
+      path: '/oportunidades'
+      fullPath: '/oportunidades/'
+      preLoaderRoute: typeof OportunidadesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oportunidades/$slug': {
+      id: '/oportunidades/$slug'
+      path: '/oportunidades/$slug'
+      fullPath: '/oportunidades/$slug'
+      preLoaderRoute: typeof OportunidadesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projetos/': {
       id: '/projetos/'
       path: '/projetos'
@@ -232,6 +366,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vida-academica/': {
+      id: '/vida-academica/'
+      path: '/vida-academica'
+      fullPath: '/vida-academica/'
+      preLoaderRoute: typeof VidaAcademicaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vida-academica/$slug': {
+      id: '/vida-academica/$slug'
+      path: '/vida-academica/$slug'
+      fullPath: '/vida-academica/$slug'
+      preLoaderRoute: typeof VidaAcademicaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vida-academica/disciplinas/': {
+      id: '/vida-academica/disciplinas/'
+      path: '/vida-academica/disciplinas'
+      fullPath: '/vida-academica/disciplinas/'
+      preLoaderRoute: typeof VidaAcademicaDisciplinasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vida-academica/disciplinas/$slug': {
+      id: '/vida-academica/disciplinas/$slug'
+      path: '/vida-academica/disciplinas/$slug'
+      fullPath: '/vida-academica/disciplinas/$slug'
+      preLoaderRoute: typeof VidaAcademicaDisciplinasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -242,10 +404,18 @@ const rootRouteChildren: RootRouteChildren = {
   LojinhaRoute: LojinhaRoute,
   EventosSlugRoute: EventosSlugRoute,
   ManuaisSlugRoute: ManuaisSlugRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
+  OportunidadesSlugRoute: OportunidadesSlugRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
+  VidaAcademicaSlugRoute: VidaAcademicaSlugRoute,
   EventosIndexRoute: EventosIndexRoute,
   ManuaisIndexRoute: ManuaisIndexRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
+  OportunidadesIndexRoute: OportunidadesIndexRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
+  VidaAcademicaIndexRoute: VidaAcademicaIndexRoute,
+  VidaAcademicaDisciplinasSlugRoute: VidaAcademicaDisciplinasSlugRoute,
+  VidaAcademicaDisciplinasIndexRoute: VidaAcademicaDisciplinasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,9 @@
+---
+# ARQUIVO ESPECIAL: adapte os valores em content/site.md já existente.
+# Não crie outro .md genérico: apenas content/site.md é carregado.
+whatsapp: "" # DDI + DDD + número, apenas dígitos. Usado pela Lojinha como padrão.
+vote_url: "" # URL completa para formulário de votação do Projeto do Mês.
+instagram: "" # URL ou identificador que o projeto já utiliza.
+email: "" # E-mail institucional do CA.
+gestao_periodo: "" # Ex.: "2026–2027".
+---

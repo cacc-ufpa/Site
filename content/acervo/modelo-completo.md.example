@@ -1,0 +1,12 @@
+---
+title: "NOME DO MATERIAL — SUBSTITUIR"
+type: "Livro" # Livro | Curso | Vídeo | Artigo | Ferramenta | Repositório
+# Deve corresponder EXATAMENTE a uma categoria reconhecida em src/lib/content.ts:
+category: "Algoritmos e Estruturas de Dados"
+description: "Resumo curto do material e para que ele é útil."
+url: "https://exemplo.org/material" # Link oficial/legítimo, obrigatório na prática.
+image: "" # Opcional: capa em /images/acervo/...; sem imagem o site cria capa gráfica.
+---
+
+> MODELO. O acervo é uma lista de LINKS EXTERNOS, não uma página de artigo.
+> O corpo abaixo do frontmatter atualmente não é exibido no Acervo.

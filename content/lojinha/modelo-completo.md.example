@@ -1,0 +1,20 @@
+---
+title: "NOME DO PRODUTO — SUBSTITUIR"
+price: "R$ 0,00" # Texto exibido; não há sistema de pagamentos integrado.
+images: # Lista de caminhos a partir de /public.
+  - "/images/lojinha/foto-produto-1.jpg"
+  - "/images/lojinha/foto-produto-2.jpg"
+sizes: ["P", "M", "G", "GG"] # [] se produto não tiver tamanhos.
+availability: "" # Texto livre, somente quando conferido. Ex.: Pré-venda.
+whatsapp: "" # Opcional; vazio usa o número de content/site.md.
+---
+
+> MODELO. A lojinha não tem carrinho nem controle automático de estoque.
+
+## Descrição
+
+Informe materiais, cores, medidas, condições de retirada e encomenda.
+
+## Como pedir?
+
+O botão abre uma conversa de WhatsApp para combinar o pedido.
