@@ -9,9 +9,9 @@ members:
     bio: "Coordena as atividades do CACC, representa a entidade e supervisiona suas decisões administrativas e financeiras."
     photo: "/images/gestao/maya.jpg"
     links:
-    - label: "Instagram"
+    - label: ""
       url: "https://instagram.com/usuario"
-    - label: "E-mail"
+    - label: ""
       url: "mailto:usuario@exemplo.com"
 
   - name: "Nicolas"
@@ -19,30 +19,6 @@ members:
     highlight: true
     bio: "Auxilia a Presidência na administração do CACC e assume suas responsabilidades quando necessário."
     photo: "/images/gestao/nicolas.jpg"
-    links: []
-
-
-  - name: "nome"
-    role: "Secretário Geral"
-    bio: "Organiza a documentação, registra reuniões, elabora atas e coordena as atividades administrativas da secretaria."
-    photo: "/images/gestao/sara.jp"
-    links: []
-
-  - name: "nome2"
-    role: "1o Secretário"
-    bio: "Auxilia o Secretário Geral nas atividades administrativas e o substitui quando necessário."
-    photo: "/images/gestao/sar.jpg"
-    links: []
-
-  - name: "nome"
-    role: "Tesoureiro Geral"
-    bio: "Administra os recursos financeiros, controla receitas e despesas e organiza a prestação de contas do CACC."
-    photo: "/images/gestao/sarajpg"
-    links: []
-  - name: "nome"
-    role: "1o Tesoureiro"
-    bio: "Auxilia o Tesoureiro Geral na gestão financeira e assume suas responsabilidades quando necessário."
-    photo: "/images/gestao/sar.jpg"
     links: []
 
 
