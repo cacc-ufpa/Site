@@ -6,7 +6,7 @@ location: "Remoto"
 category: "Qualificação de Doutorado"
 organizer: "computacaoufpa"
 image: "/images/eventos/qualificacao_doutorado.png"
-status: "upcoming"
+status: "past"
 ---
 
 ## On-Device Federated Learning: Enabling Faster Adaptation and Reduced Latency
