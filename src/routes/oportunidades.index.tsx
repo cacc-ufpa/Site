@@ -26,6 +26,7 @@ function OportunidadesPage() {
         Bolsas, estágios, iniciação científica, empregos, hackathons, editais e seleções.
       </PageHead>
       <main className="mx-auto max-w-7xl px-4 py-12 md:px-8">
+        <p className="mb-7 max-w-3xl border-l-2 border-neon bg-card px-5 py-4 text-sm leading-relaxed text-paper/75">Este mural reúne oportunidades e canais oficiais da UFPA. Os itens marcados como consulta são fontes permanentes, não inscrições abertas. Confira o edital antes de se candidatar.</p>
         <div className="mb-8 flex flex-wrap items-center gap-3">
           <div className="flex flex-wrap gap-2" aria-label="Filtrar oportunidades por categoria">
             {categorias.map((c) => (
@@ -52,7 +53,7 @@ function OportunidadesPage() {
                 <p className="mt-2 text-sm text-paper/65">{o.organization}</p>
                 <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-paper/75">{o.description}</p>
                 <div className="mt-auto flex items-end justify-between gap-3 pt-6 font-mono text-xs text-paper/75">
-                  <span className="flex items-center gap-2"><CalendarClock className="size-4" /> {o.deadline ? `Até ${dataPtBr(o.deadline)}` : "Prazo não informado"}</span>
+                  <span className="flex items-center gap-2"><CalendarClock className="size-4" /> {o.deadline ? `Até ${dataPtBr(o.deadline)}` : statusOportunidade(o)}</span>
                   <ArrowUpRight className="size-5 shrink-0 text-neon" />
                 </div>
               </Link>

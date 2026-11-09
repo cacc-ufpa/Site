@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, BookOpen, LibraryBig, ListTree } from "lucide-react";
-import { dataPtBr, noticias, oportunidades, oportunidadeAberta } from "@/lib/portal-content";
+import { dataPtBr, noticias, oportunidades, oportunidadeAberta, statusOportunidade } from "@/lib/portal-content";
 
 /** Seções adicionais, independentes da lógica dos eventos e projetos da home. */
 export function PortalHomeNews() {
@@ -8,7 +8,7 @@ export function PortalHomeNews() {
   return (
     <section className="border-t border-paper/10 bg-background">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
-        <SectionHeader n="02" title="Últimas notícias" to="/noticias" label="Todas as notícias" />
+        <SectionHeader n="01" title="Últimas notícias" to="/noticias" label="Todas as notícias" />
         {destaques.length ? (
           <div className="grid gap-4 md:grid-cols-3">
             {destaques.map((noticia) => (
@@ -30,19 +30,20 @@ export function PortalHomeNews() {
 }
 
 export function PortalHomeOpportunities() {
-  const abertas = oportunidades.filter((item) => oportunidadeAberta(item)).slice(0, 3);
+  const abertas = oportunidades.filter((item) => oportunidadeAberta(item));
+  const destaques = abertas.length ? abertas.slice(0, 3) : oportunidades.slice(0, 3);
   return (
     <section className="border-t border-paper/10 bg-ink">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         <SectionHeader n="03" title="Oportunidades" to="/oportunidades" label="Ver mural" />
-        {abertas.length ? (
+        {destaques.length ? (
           <div className="grid gap-3 lg:grid-cols-3">
-            {abertas.map((item) => (
+            {destaques.map((item) => (
               <Link key={item.slug} to="/oportunidades/$slug" params={{ slug: item.slug }} className="group relative flex min-h-48 flex-col border border-paper/30 bg-card p-5 hover:border-neon">
                 <span className="self-start bg-neon px-2 py-1 font-mono text-xs uppercase text-ink">{item.category}</span>
                 <h3 className="font-title mt-4 text-xl font-bold leading-tight group-hover:text-neon">{item.title}</h3>
                 <p className="mt-2 text-sm text-paper/65">{item.organization}</p>
-                <p className="mt-auto pt-5 font-mono text-xs text-violet">{item.deadline ? `Prazo: ${dataPtBr(item.deadline)}` : "Sem data de encerramento informada"}</p>
+                <p className="mt-auto pt-5 font-mono text-xs text-violet">{item.deadline ? `Prazo: ${dataPtBr(item.deadline)}` : statusOportunidade(item)}</p>
                 <ArrowUpRight className="absolute bottom-4 right-4 size-5 text-neon" />
               </Link>
             ))}

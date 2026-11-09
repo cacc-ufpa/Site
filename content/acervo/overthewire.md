@@ -1,8 +1,8 @@
 ---
 title: "OverTheWire Wargames"
-type: "Ferramenta"
+type: "Prática"
 category: "Cibersegurança"
-description: "Desafios práticos de segurança."
+description: "Desafios práticos de Linux e segurança."
 url: "https://overthewire.org/wargames/"
-image: ""
+image: "https://www.google.com/s2/favicons?domain=overthewire.org&sz=256"
 ---

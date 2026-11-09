@@ -33,8 +33,10 @@ function Home() {
   return (
     <>
       {/* Capa */}
-      <section className="home-cover overflow-hidden">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 md:grid-cols-[1.05fr_1fr] md:px-8 md:py-12">
+      <section className="home-cover relative isolate overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroUfpa})` }}>
+  	<div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#121214] via-[#121214]/80 to-[#121214]/15 max-md:to-[#121214]/75"/>
+
+  <div className="relative z-10 mx-auto grid min-h-[520px] max-w-7xl items-center gap-8 px-4 py-10 md:grid-cols-[1.05fr_1fr] md:px-8 md:py-12">
           <div className="relative z-10">
             <p className="mb-5 font-mono text-xs uppercase"><span className="text-neon">∴ CACC</span> / UFPA</p>
             <h1 className="display hero-heading">
@@ -56,7 +58,6 @@ function Home() {
           </div>
           <div className="relative min-w-0">
             <img src={heroUfpa} alt="Colagem ilustrada de universidade e computador em roxo e verde-lima" width={1200} height={960} className="aspect-[5/4] w-full object-cover" />
-            <p className="absolute right-0 top-20 border-l border-paper/30 bg-ink/80 px-3 py-4 font-mono text-[0.6rem] uppercase leading-loose">UFPA —<br />ICEN —<br />COMPUTAÇÃO</p>
           </div>
         </div>
       </section>
@@ -91,9 +92,11 @@ function Home() {
         </section>
       )}
 
+      <PortalHomeNews />
+
       {/* Eventos */}
       <section className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-        <SectionTitle n="01" title="Próximos eventos" to="/eventos" />
+        <SectionTitle n="02" title="Próximos eventos" to="/eventos" />
         {main ? (
           <div className="grid gap-5 md:grid-cols-12">
             <Link
@@ -101,12 +104,24 @@ function Home() {
               params={{ slug: main.slug }}
               className="group grid min-w-0 overflow-hidden border border-paper/45 md:col-span-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:h-[430px]"
             >
-              <Cover
-                src={main.image}
-                alt={main.title}
-                tone="violet"
-                className="aspect-[4/3] min-h-64 w-full md:aspect-auto md:h-full md:min-h-[345px] lg:min-h-0"
-              />
+              
+		<div className="relative aspect-square min-h-[260px] w-full overflow-hidden bg-[#16121b] md:aspect-auto md:h-full md:min-h-[345px] lg:min-h-0">
+		  {/* Fundo desfocado para preencher espaços */}
+		  <img
+		    src={main.image}
+		    alt=""
+		    aria-hidden="true"
+		    className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-xl"
+		  />
+		
+		  {/* Imagem inteira, sem cortes */}
+		  <img
+		    src={main.image}
+		    alt={main.title}
+		    className="absolute inset-0 h-full w-full object-contain"
+		  />
+		</div>
+
 
               <div className="relative flex min-w-0 flex-col bg-card p-5 text-paper md:min-h-[345px] md:p-5 lg:min-h-0 lg:p-6">
                 {/* Data, categoria e título: hierarquia editorial da referência */}
@@ -161,7 +176,6 @@ function Home() {
         )}
       </section>
 
-      <PortalHomeNews />
       <PortalHomeOpportunities />
 
       {/* Projetos */}

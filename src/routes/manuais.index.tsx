@@ -6,7 +6,7 @@ export const Route = createFileRoute("/manuais/")({
   head: () => ({
     meta: [
       { title: "Manuais — CACC" },
-      { name: "description", content: "Guias práticos: Wi-Fi, SIGAA, matrícula, documentos e serviços acadêmicos." },
+      { name: "description", content: "Guias práticos da universidade, com referências institucionais." },
       { property: "og:title", content: "Manuais — CACC" },
       { property: "og:description", content: "Base de conhecimento para estudantes de Computação." },
     ],
@@ -19,9 +19,10 @@ function Manuais() {
   return (
     <>
       <PageHead n="06" title="Manuais" kicker="Base de conhecimento">
-        Procedimentos acadêmicos e orientações práticas, explicados passo a passo.
+        Orientações passo a passo para estudantes, com fontes oficiais da UFPA.
       </PageHead>
       <div className="mx-auto max-w-5xl px-4 py-14 md:px-8">
+        <p className="mb-10 border-l-2 border-neon bg-card px-5 py-4 text-sm text-paper/80">Manuais preparados pelo CACC com base em fontes institucionais. Consulte as referências ao final de cada guia.</p>
         {cats.map((c) => (
           <section key={c} className="mb-12 grid gap-4 md:grid-cols-[14rem_1fr]">
             <h2 className="font-mono text-sm uppercase text-violet">{c}</h2>

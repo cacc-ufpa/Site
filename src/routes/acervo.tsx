@@ -38,13 +38,13 @@ function Acervo() {
       </div>
       <div className="mx-auto grid max-w-7xl gap-x-6 gap-y-10 px-4 py-14 sm:grid-cols-2 md:px-8 lg:grid-cols-4">
         {list.map((r) => {
-          const tone = tones[ACERVO_CATEGORIAS.indexOf(r.category) % tones.length];
+          const tone = tones[Math.max(0, ACERVO_CATEGORIAS.indexOf(r.category)) % tones.length];
           return (
             <a key={r.slug} href={r.url} target="_blank" rel="noreferrer" className="group flex flex-col">
               {r.image ? (
-                <img src={r.image} alt={r.title} className="aspect-[3/4] w-full object-cover" loading="lazy" />
+                <img src={r.image} alt={r.title} className="aspect-[4/3] w-full bg-[#1a1724] p-3 object-contain transition-colors group-hover:bg-[#292038]" loading="lazy" />
               ) : (
-                <div className={`flex aspect-[3/4] flex-col justify-between p-4 ${tone}`} aria-hidden>
+                <div className={`flex aspect-[4/3] flex-col justify-between p-4 ${tone}`} aria-hidden>
                   <span className="font-mono text-[0.65rem] uppercase">{r.category}</span>
                   <span className="display line-clamp-5 text-3xl">{r.title}</span>
                   <span className="font-mono text-xs uppercase">{r.type}</span>

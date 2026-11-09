@@ -88,6 +88,7 @@ export function oportunidadeAberta(o: Oportunidade, hoje = new Intl.DateTimeForm
 }
 
 export function statusOportunidade(o: Oportunidade): string {
+  if (o.status === "consulta") return "Consultar fonte oficial";
   if (o.status === "cancelada") return "Cancelada";
   if (o.status === "encerrada" || o.status === "fechada") return "Encerrada";
   if (o.deadline) return oportunidadeAberta(o) ? "Inscrições abertas" : "Prazo encerrado";
