@@ -28,7 +28,14 @@ function ProjetoPage() {
     <article className="mx-auto max-w-5xl px-4 py-10 md:px-8">
       <Link to="/projetos" className="font-mono text-xs uppercase link-under">← Projetos</Link>
       <header className="mt-6 grid gap-8 border-b border-border pb-8 md:grid-cols-[12rem_1fr]">
-        <Cover src={p.image} alt={p.title} tone="deep" className="aspect-square w-48" />
+        {p.image ? (
+          <div className="relative aspect-square w-48 overflow-hidden bg-[#15131d]">
+            <img src={p.image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-xl" />
+            <img src={p.image} alt={p.title} className="absolute inset-0 h-full w-full object-contain p-2" />
+          </div>
+        ) : (
+          <Cover src={p.image} alt={p.title} tone="deep" className="aspect-square w-48" />
+        )}
         <div>
           {p.month_project && <span className="tag bg-violet text-ink">Projeto do mês</span>}
           <h1 className="display mt-3 text-6xl md:text-7xl">{p.title}</h1>

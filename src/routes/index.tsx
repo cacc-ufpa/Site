@@ -185,7 +185,25 @@ function Home() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {destaques.map((p, i) => (
               <Link key={p.slug} to="/projetos/$slug" params={{ slug: p.slug }} className={`project-card group relative flex min-h-64 flex-col border border-paper/45 p-5 ${i % 2 ? "project-card-alt" : ""}`}>
-                {p.image ? <Cover src={p.image} alt={p.title} className="mb-3 aspect-[3/1] w-full" /> : <span className="text-neon">{i % 3 === 0 ? <Code2 className="size-8" /> : i % 3 === 1 ? <Box className="size-8" /> : <Users className="size-8" />}</span>}
+                {p.image ? (
+                  <div className="relative mb-3 aspect-[5/2] w-full overflow-hidden bg-[#15131d]">
+                    <img
+                      src={p.image}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-xl"
+                      loading="lazy"
+                    />
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="absolute inset-0 h-full w-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <span className="text-neon">{i % 3 === 0 ? <Code2 className="size-8" /> : i % 3 === 1 ? <Box className="size-8" /> : <Users className="size-8" />}</span>
+                )}
                 <h3 className="font-title mt-4 text-2xl font-bold leading-tight group-hover:text-neon">{p.title}</h3>
                 <p className="mt-3 text-xs leading-relaxed text-paper/80">{p.description}</p>
                 <p className="mt-auto pt-4 pr-8 font-mono text-[0.6rem] uppercase text-paper/50">{p.author}</p>
