@@ -21,6 +21,11 @@ members:
     photo: "/images/gestao/nicolas.jpg"
     links: []
 
+  - name: "Juliana Rodrigues"
+    role: "Tesoureira Geral"
+    bio: "Administra os recursos financeiros do CACC, mantém os registros contábeis e organiza balancetes e prestações de contas."
+    photo: "/images/gestao/juliana.jpg"
+    links: []
 
   - name: "Sara"
     role: "Diretora de Comunicação"
@@ -45,5 +50,7 @@ members:
     bio: "Auxilia na organização e execução do planejamento, acompanhando projetos, iniciativas acadêmicas e parcerias."
     photo: "/images/gestao/mateus.jpg"
     links: []
+
+
 
 ---
