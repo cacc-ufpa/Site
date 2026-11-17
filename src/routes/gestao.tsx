@@ -24,7 +24,7 @@ function Gestao() {
       </PageHead>
       {gestao.demo && (
         <p className="bg-coral px-4 py-3 text-center font-mono text-sm text-ink">
-          Demonstração: nomes, cargos e textos abaixo são fictícios.
+          A gestão do CACC está passando por mudanças. Em breve as informações sobre a nova gestão serão atualizadas.
         </p>
       )}
       <section className="mx-auto max-w-7xl px-4 py-14 md:px-8">

@@ -1,6 +1,6 @@
 ---
 demo: true
-intro: "Conteúdo de demonstração — os integrantes abaixo são fictícios e devem ser substituídos."
+intro: "O Centro Acadêmico de Ciência da Computação (CACC), com sede na Cidade Universitária Professor José Silveira Neto, da Universidade Federal do Pará (UFPA), é o órgão de participação do corpo discente do Curso de Ciência da Computação."
 photo: ""
 members:
   - name: "Anamaya"
