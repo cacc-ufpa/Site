@@ -44,8 +44,8 @@ function Home() {
               <span className="block italic text-neon">Ciência da<br />Computação</span>
             </h1>
             <p className="mt-5 max-w-lg text-xs leading-relaxed text-paper/85">
-              O CACC representa os estudantes de Computação, organiza eventos, divulga o que a gente constrói e reúne o que
-              todo mundo precisa saber para sobreviver ao curso.
+              O CACC representa os estudantes de Ciência da Computação, organiza eventos, divulga o que construímos e reúne o que
+              todo o mundo precisa saber para sobreviver ao curso.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Button asChild className="h-11 rounded-none px-5 font-mono text-xs font-bold uppercase shadow-none">
