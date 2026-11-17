@@ -91,7 +91,7 @@ export const projetos: Projeto[] = load("projetos", (d, body, slug) => ({
 
 export const ACERVO_CATEGORIAS = [
   "Introdução à Computação", "Algoritmos e Estruturas de Dados", "Desenvolvimento Web", "Inteligência Artificial",
-  "Redes de Computadores", "Cibersegurança", "Sistemas Operacionais", "Matemática e Computação",
+  "Redes de Computadores", "Cibersegurança", "Sistemas Operacionais", "Matemática e Computação", "Computação Geral",
 ];
 export const acervo: Recurso[] = load("acervo", (d, _b, slug) => ({
   slug, title: str(d.title), type: str(d.type), category: str(d.category), description: str(d.description), url: str(d.url), image: str(d.image),
