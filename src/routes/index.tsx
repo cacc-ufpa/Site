@@ -15,7 +15,10 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Portal do Centro Acadêmico de Ciência da Computação da UFPA, em Belém. Eventos, disciplinas, vida acadêmica, oportunidades, notícias e guias para estudantes." },
       { property: "og:title", content: "CACC — Ciência da Computação UFPA" },
       { property: "og:description", content: "Notícias, eventos, oportunidades e informações acadêmicas para estudantes de Ciência da Computação da UFPA." },
+      { property: "og:url", content: "https://ufpacacc.com/" },
+      { property: "og:image", content: "https://ufpacacc.com/favicon-512x512.png" },
     ],
+    links: [{ rel: "canonical", href: "https://ufpacacc.com/" }],
   }),
   component: Home,
 });
