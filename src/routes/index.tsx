@@ -11,10 +11,10 @@ import { PortalHomeNews, PortalHomeOpportunities, PortalAcademicShortcuts } from
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CACC — Centro Acadêmico de Ciência da Computação" },
-      { name: "description", content: "A revista-portal do CACC: eventos, projetos de alunos, avisos, lojinha, acervo e manuais." },
-      { property: "og:title", content: "CACC — Centro Acadêmico de Ciência da Computação" },
-      { property: "og:description", content: "Eventos, projetos, avisos, acervo e manuais da comunidade de Computação." },
+      { title: "Ciência da Computação UFPA | CACC — Centro Acadêmico" },
+      { name: "description", content: "Portal do Centro Acadêmico de Ciência da Computação da UFPA, em Belém. Eventos, disciplinas, vida acadêmica, oportunidades, notícias e guias para estudantes." },
+      { property: "og:title", content: "CACC — Ciência da Computação UFPA" },
+      { property: "og:description", content: "Notícias, eventos, oportunidades e informações acadêmicas para estudantes de Ciência da Computação da UFPA." },
     ],
   }),
   component: Home,
