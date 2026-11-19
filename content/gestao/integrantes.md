@@ -51,6 +51,13 @@ members:
     photo: "/images/gestao/mateus.jpg"
     links: []
 
+  - name: "Yulle Oliveira"
+    role: "Vice-Diretora de Cultura e Lazer"
+    bio: "Auxilia na organização de eventos culturais e esportivos, incentivando a convivência e a integração da comunidade acadêmica."
+    photo: "/images/gestao/yulle.png"
+    links: []
+
+
 
 
 ---
