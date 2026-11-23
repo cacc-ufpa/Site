@@ -6,7 +6,7 @@ location: "Sala de Aula do Prédio LabTIC/GERCOM"
 category: "Qualificação de Doutorado"
 organizer: "computacaoufpa"
 image: "/images/eventos/dissertacao_mestrado.png"
-status: "upcoming"
+status: "past"
 ---
 
 ## Planejamento de Associações entre O-RUS e O-DUS em Open RAN Orientado por Métricas Computacionais Experimentais
